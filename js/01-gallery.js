@@ -39,12 +39,13 @@ function onImgClick(evt) {
 
   instance.show();
 
-  window.addEventListener("keydown", onEscPress);
+  window.addEventListener("keydown", onEscPress, { once: true });
 
   function onEscPress(evt) {
     const ESC_KEY = "Escape";
     if (evt.code === ESC_KEY) {
       instance.close();
+      console.log("its still working");
     }
   }
 }
